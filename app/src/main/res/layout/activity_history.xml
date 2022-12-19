@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/info"
+    tools:context=".ui.HistoryActivity">
+
+    <ImageButton
+        android:id="@+id/history_backBtn"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_margin="16dp"
+        android:src="@drawable/ic_back"
+        android:backgroundTint="@color/info"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="24dp"
+        android:textColor="@color/black"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:theme="@style/TitleText"
+        android:text="Halaman Riwayat Absensi"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/history_backBtn"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/history_dateValue"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Riwayat Absensi . . ."
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/text2"
+        android:padding="10dp"
+        android:layout_margin="16dp"
+        android:background="@drawable/rounded_bg"
+        android:backgroundTint="@color/white"
+        android:gravity="center_vertical"
+        android:drawableRight="@drawable/ic_baseline_filter_alt_24"
+        app:layout_constraintTop_toBottomOf="@id/history_backBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/history_rvAbsent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:padding="16dp"
+        android:background="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/history_dateValue"
+        app:layout_constraintBottom_toTopOf="@id/history_footerBox"/>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:id="@+id/history_footerBox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/info"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/history_rvAbsent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <TextView
+            android:id="@+id/history_footerLabel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="10dp"
+            android:layout_marginVertical="8dp"
+            android:text="Rekap Absensi :"
+            android:theme="@style/TitleText"
+            android:gravity="center"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/history_footerOn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="On Time 0 hari"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="5dp"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/ic_ok_new"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/history_footerLate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Terlambat 0 hari"
+            android:textColor="@color/black"
+            android:layout_marginLeft="10dp"
+            android:drawablePadding="5dp"
+            android:drawableLeft="@drawable/ic_nok"
+            android:gravity="center"/>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/history_printBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:src="@drawable/ic_print"
+        android:backgroundTint="@color/success"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
